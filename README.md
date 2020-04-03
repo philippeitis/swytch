@@ -1,4 +1,4 @@
-# xswitch
+# swytch
 If you've ever felt like you really, really need a switch statement in Python, then this might be the thing for you.
 
 There's a little bit of everything for everyone: Exhaustive switches, default cases, switch cases for hashable types, switch cases for unhashable types, context-based switches, and switches over enums.
