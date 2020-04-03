@@ -11,7 +11,7 @@ class PowersOfTwo(enum.IntEnum):
   one = 2
   two = 4
   
-class PowersOfTwoSwitch(ExhaustiveSwitch, enum=PowersofTwo):
+class PowersOfTwoSwitch(ExhaustiveSwitch, enum=PowersOfTwo):
   @case(PowersOfTwo.zero)
   def zero(self):
     print("2^0")
