@@ -250,8 +250,9 @@ class Switch(FallThroughSwitch):
         cls._fall_throughs = copy(cls._fall_throughs)
         cls._fn_signature = copy(cls._fn_signature)
         have_default = False
-
-        for fn in cls.__dict__.values():
+        default = None
+        for attr in cls.__dict__:
+            fn = cls.__dict__[attr]
             if not isinstance(fn, MetaCase):
                 continue
 
@@ -274,8 +275,10 @@ class Switch(FallThroughSwitch):
 
             if Default in fn:
                 have_default = True
-                cls._default = fn
+                default = fn
 
+        if default:
+            cls._default = default
         cls.register_fallthroughs(cls)
 
     def __init_subclass__(cls):
